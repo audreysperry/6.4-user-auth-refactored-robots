@@ -1,0 +1,25 @@
+<header> <h2 class="robot-header">Robot LinkedIn</h2> </header>
+
+<div class="wrapper">
+
+{{#each profiles}}
+{{#if job}}
+<a class="robot-link" href="/robot/{{id}}"><div class="robot">
+  <img src="{{avatar}}" alt="">
+  <h1 class="robot-name">{{name}}</h1>
+  <div class="career">
+    <span>{{job}},</span>
+    <span>{{company}}</span>
+  </div>
+
+</div></a>
+{{else}}
+<a class="robot-link" href="/robot/{{id}}"><div class="robot">
+  <img src="{{avatar}}" alt="">
+  <h1 class="robot-name">{{name}}</h1>
+  <p class="hire-robot">Available for hire</p>
+</div></a>
+{{/if}}
+{{/each}}
+
+</div>

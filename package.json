@@ -1,0 +1,23 @@
+{
+  "name": "6.2-refactored-robots",
+  "version": "1.0.0",
+  "description": "Robots for Linkedin",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "jest"
+  },
+  "author": "Audrey",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.15.4",
+    "express-flash-messages": "^0.1.1",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.8",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -1,0 +1,132 @@
+.hire-robot {
+  color: #E06E6E;
+  font-size: 14px;
+  font-family: 'helvetica';
+
+}
+
+
+.robot {
+  width: 200px;
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.robot-link {
+  text-decoration: none;
+}
+
+.robot-name {
+  color: #467dd6;
+  font-size: 20px;
+  font-family: 'helvetica';
+}
+
+.career {
+  color: #8E818B;
+  font-size: 14px;
+  font-family: 'helvetica';
+}
+
+.detail-robot-name {
+  font-family: 'helvetica';
+  font-size: 60px;
+  font-weight: 300;
+  display: inline-block;
+  margin: 10px 0px;
+}
+
+.robot-profile-pic {
+  border: 1px solid #ddd;
+  border-radius: 100%;
+  padding: 4px;
+  float: left;
+  margin-bottom: 20px;
+
+}
+
+.detail-robot-info {
+  font-family: 'helvetica';
+  font-size: 16px;
+  font-weight: 100;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.education-skills {
+  clear: left;
+  font-family: 'helvetica';
+  font-size: 16px;
+  font-weight: 100;
+  margin-left: 100px;
+
+
+}
+
+.education-div h2 {
+  margin-right: 20px;
+  text-align: right;
+  display: inline;
+  font-size: 16px;
+
+}
+
+.education-div p {
+  display: inline
+
+}
+
+.skills-div h2 {
+  margin-right: 25px;
+  display: inline-block;
+  width: 77px;
+  text-align: right;
+  font-size: 16px;
+}
+
+.skills-div ul {
+  display: inline-block;
+}
+
+.skills-list {
+  list-style: none;
+  display: inline-block;
+  padding-left: 0px;
+}
+
+.skills-div {
+  display: flex;
+
+}
+
+.detail-wrapper {
+  max-width: 800px;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.robots-link {
+  text-decoration: none;
+  font-family: 'Helvetica';
+  font-size: 20px;
+  color: black;
+  font-weight: 100;
+}
+
+.robot-header {
+  text-align: center;
+  font-family: 'helvetica';
+  font-weight: 100;
+  font-size: 30px;
+
+}

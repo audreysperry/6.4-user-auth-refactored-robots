@@ -1,0 +1,66 @@
+<a class="robots-link" href="/">View other Robots</a>
+
+<div class="detail-wrapper">
+  <img class="robot-profile-pic" src="{{profile.avatar}}" alt="">
+
+
+  {{#if profile.address.city}}
+    <div class="detail-robot-info">
+      <h1 class="detail-robot-name">{{profile.name}}</h1> </br>
+      <span>{{profile.address.city}}, {{profile.address.country}} | </span>
+
+  {{else}}
+    <div class="detail-robot-info">
+      <h1 class="detail-robot-name">{{profile.name}}</h1> </br>
+      <span> {{profile.address.country}} | </span>
+
+
+  {{/if}}
+
+  {{#if profile.job}}
+    <span>{{profile.job}}, {{profile.company}}</span> </br> <span> {{profile.email}} | {{profile.phone}}</span> </br>
+    </div>
+
+
+  {{else}}
+    <span class="hire-robot">Available for hire</span> </br>
+    <span> {{profile.email}} | {{profile.phone}}</span>
+    </br>
+    </div>
+
+  {{/if}}
+
+  {{#if profile.university}}
+    <div class="education-skills">
+      <div class="education-div">
+        <h2 id="education">Education</h2>
+        <p>{{profile.university}}</p>
+      </div>
+      <div class="skills-div">
+        <h2 id="skills">Skills</h2>
+        <ul class="skills-list">
+          {{#each profile.skills}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+    </div>
+
+
+  {{else}}
+    <div class="education-skills">
+      <div class="skills-div">
+        <h2 id="skills">Skills</h2>
+        <ul class="skills-list">
+          {{#each profile.skills}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+      </div>
+
+    </div>
+
+  {{/if}}
+
+</div>
