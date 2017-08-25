@@ -1,9 +1,10 @@
-const Robot = require('../models/data');
+const User = require('../models/user');
 
 var IndexController = {
-  index: function(req, res) {
-    Robot.allRobots(function(err, results) {
-      res.render('index', {profiles: results})
+  index: function(req, res, callback) {
+    User.find().then(function(robots) {
+      console.log('robots all', robots);
+      res.render('index', {profiles: robots})
     });
 
   }

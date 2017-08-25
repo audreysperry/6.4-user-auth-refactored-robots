@@ -1,11 +1,14 @@
 const express = require('express');
 const exphbs = require('express-handlebars');
-const routes = require('./router');
-const mongo = require('./mongoutils');
 const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const flash = require('express-flash-messages');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const routes = require('./router');
+
+
 
 const app = express();
 
@@ -16,35 +19,12 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 app.use('/static', express.static('public'));
-
+app.use(bodyParser.urlencoded({extended: false}));
 
 // passport user auth config
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    User.authenticate(username, password, function(err, user) {
-      if (err) {
-        return done(err)
-      }
-      if (user) {
-        return done(null, user)
-      } else {
-        return done(null, false, {
-          message: "There is no user with that username and password."
-        })
-      }
-    })
-  }));
+require('./controllers/passport');
 
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    done(err, user);
-  });
-});
 
 // middleware
 app.use(session({
@@ -63,9 +43,12 @@ routes(app);
 
 var database = process.env.MONGODB_URI || 'mongodb://localhost:27017/robots2db';
 //connect to the database and start teh server once the connectionis made
-mongo.connect(database, () => {
-  app.listen(process.env.PORT || 3000);
-});
+mongoose.connect(database);
+// mongo.connect(database, () => {
+//   app.listen(process.env.PORT || 3000);
+// });
+
+app.listen(3000);
 
 
 

@@ -1,10 +1,13 @@
 <header> <h2 class="robot-header">Robot LinkedIn</h2> </header>
 
+<a href="/login/" class = "btn btn-success">Login to get started</a>
+
 <div class="wrapper">
+
 
 {{#each profiles}}
 {{#if job}}
-<a class="robot-link" href="/robot/{{id}}"><div class="robot">
+<a class="robot-link" href="/robot/{{_id}}"><div class="robot">
   <img src="{{avatar}}" alt="">
   <h1 class="robot-name">{{name}}</h1>
   <div class="career">
@@ -14,6 +17,7 @@
 
 </div></a>
 {{else}}
+
 <a class="robot-link" href="/robot/{{id}}"><div class="robot">
   <img src="{{avatar}}" alt="">
   <h1 class="robot-name">{{name}}</h1>
