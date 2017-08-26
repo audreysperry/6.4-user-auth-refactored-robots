@@ -9,7 +9,7 @@ const requireLogin = function (req, res, next) {
   if (req.user) {
     next()
   } else {
-    res.redirect('/signup/');
+    res.redirect('/login/');
   }
 };
 
@@ -18,7 +18,7 @@ module.exports = function(app) {
   const profileRouter = express.Router();
   const userRouter = express.Router();
 
-
+  userRouter.get('/logout/', UserController.logout);
   userRouter.get('/login/', UserController.login);
 
   userRouter.post('/login/', passport.authenticate('local-login', {
@@ -29,21 +29,26 @@ module.exports = function(app) {
 
   userRouter.get('/signup/', UserController.signup);
   userRouter.post('/signup/', passport.authenticate('local-signup', {
-    successRedirect: '/',
+    successRedirect: '/login/',
     failureRedirect: '/signup/',
     failureFlash: true
   }));
+
 
 
   indexRouter.use(requireLogin);
   indexRouter.get('/', IndexController.index);
   //
   profileRouter.use(requireLogin);
+
+
+  profileRouter.post('/update/', ProfileController.update);
+  profileRouter.get('/update/', ProfileController.form);
   profileRouter.get('/:id/', ProfileController.detail);
 
 
-
   app.use('/', userRouter);
-  app.use('/', indexRouter);
   app.use('/robot', profileRouter);
+  app.use('/', indexRouter);
+
 };

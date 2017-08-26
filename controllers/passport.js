@@ -5,7 +5,8 @@ const User = require('../models/user');
 
 
 passport.use('local-login', new LocalStrategy(
-  function(username, password, done) {
+  {passReqToCallback: true},
+  function(req, username, password, done) {
     User.authenticate(username, password, function(err, user) {
       if (err) {
         return done(err)
@@ -24,13 +25,13 @@ passport.use('local-login', new LocalStrategy(
 passport.use('local-signup', new LocalStrategy(
   {passReqToCallback: true},
   function(req, username, password, done) {
-    console.log(req.body);
     var skills = req.body.skills.split(',');
     User.signup({
       name: req.body.name,
       email: req.body.email,
       skills: skills,
       username: req.body.username,
+      avatar: req.body.avatar,
       password: req.body.password,
       university: req.body.university,
       company: req.body.company,

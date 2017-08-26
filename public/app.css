@@ -1,3 +1,8 @@
+img {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 .hire-robot {
   color: #E06E6E;
   font-size: 14px;
@@ -128,5 +133,4 @@
   font-family: 'helvetica';
   font-weight: 100;
   font-size: 30px;
-
 }
