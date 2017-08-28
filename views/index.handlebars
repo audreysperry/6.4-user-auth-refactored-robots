@@ -2,13 +2,11 @@
 
 <a href="/logout/" class = "btn btn-danger">Logout</a>
 
-{{#each currentProfile}}
 
-  <h1 class="robot-name">{{name}}</h1>
-  <img src="{{avatar}}" alt="">
+  <h1 class="robot-name">{{currentProfile.name}}</h1>
+  <img src="{{currentProfile.avatar}}" alt="">
   <a class= "btn btn-info" href="/robot/update">Update profile</a>
 
-{{/each}}
 
 
 <div class="wrapper">

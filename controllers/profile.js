@@ -35,8 +35,7 @@ var ProfileController = {
       country: req.body.country,
       postal_code: req.body.postal_code
     };
-    console.log(name);
-    console.log("robotId", robotId);
+
     User.updateOne({
       _id: robotId
     }, {
